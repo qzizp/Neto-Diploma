@@ -142,7 +142,7 @@ body {
   font-size: 0;
 }
 
-.contactInfo__item {
+.ci-item {
   display: inline-block;
   margin-top: 74px;
   width: 80px;
@@ -150,34 +150,32 @@ body {
   font-size: 0;
 }
 
-.contactInfo__item-phone {
+.ci-item-phone {
   background: url("../img/divides/contact-info-divide-min.png") no-repeat center right, url("../img/sprites/other-icons-sprite-min.png") no-repeat center -105px;
 }
 
-.contactInfo__item-location {
+.ci-item-location {
   position: relative;
   background: url("../img/divides/contact-info-divide-min.png") no-repeat center right, url("../img/sprites/other-icons-sprite-min.png") no-repeat center -167px;
 }
 
-.contactInfo__item-email {
+.ci-item-email {
   background: url("../img/sprites/other-icons-sprite-min.png") no-repeat center -225px;
 }
 
-.contactInfo__item-phone:hover {
+.ci-item-phone:hover {
   background: url("../img/divides/contact-info-divide-min.png") no-repeat center right, url("../img/sprites/other-icons-sprite-min.png") no-repeat center -280px;
 }
 
-.contactInfo__item-location:hover {
+.ci-item-location:hover {
   background: url("../img/divides/contact-info-divide-min.png") no-repeat center right, url("../img/sprites/other-icons-sprite-min.png") no-repeat center -342px;
 }
 
-.contactInfo__item-email:hover {
+.ci-item-email:hover {
   background: url("../img//sprites/other-icons-sprite-min.png") no-repeat center -400px;
 }
 
-.contactInfo__item-location::before {
-  content: "Saudi Arabia . Alreyadah";
-  color: #000;
+.ci-item-tooltip {
   position: absolute;
   top: -71px;
   left: -78px;
@@ -189,22 +187,30 @@ body {
   font-size: 16px;
   text-align: center;
   line-height: 51px;
+  color: #000;
   opacity: 0;
+  transition: 0.2s;
 }
 
-.contactInfo__item-location::after {
+.ci-item-tooltip::after {
   content: "";
   position: absolute;
-  top: -18px;
-  left: 23px;
+  top: 47px;
+  left: 99px;
   width: 31px;
   height: 12px;
   background: url("../img/contactInfo-triangle-min.png") no-repeat center;
   opacity: 0;
+  transition: 0.2s;
 }
 
-.contactInfo__item-location:hover.contactInfo__item-location::before,
-.contactInfo__item-location:hover.contactInfo__item-location::after {
+.ci-item-location:hover .ci-item-tooltip,
+.ci-item-location:hover .ci-item-tooltip::after {
+  opacity: 1;
+}
+
+.ci-item-location:hover.ci-item-location::before,
+.ci-item-location:hover.ci-item-location::after {
   opacity: 1;
 }
 
@@ -394,7 +400,7 @@ body {
   text-align: justify;
 }
 
-.about-ISAMA-item strong {
+.about-ISAMA-item h3 {
   display: inline-block;
   margin-top: 23px;
   font-size: 26px;
@@ -600,7 +606,7 @@ main h2 {
   margin-right: 0;
 }
 
-.work-box img {
+.work-box > img {
   border-radius: 5px;
 }
 
@@ -608,14 +614,11 @@ main h2 {
 .work-plus {
   float: left;
   width: 126px;
-  height: 20px;
 }
 
-.work-link a,
-.work-plus a {
-  display: block;
-  width: 100px;
-  height: 40px;
+a.work-link:hover,
+a.work-plus:hover {
+  transform: scale(0.9);
 }
 
 .work-link img,
